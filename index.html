@@ -82,7 +82,7 @@
         </p>
         <div class="hero__ctas">
           <button class="btn btn--primary btn--lg" onclick="scrollToForm('family')">
-            Find a companion for my family
+            Find a companion for my loved one
           </button>
           <button class="btn btn--ghost btn--lg" onclick="scrollToForm('companion')">
             Become a companion
@@ -197,9 +197,9 @@
       <div class="story-cta-block">
         <div class="story-cta-inner">
           <p class="story-cta-label">Sound familiar?</p>
-          <h3 id="story-cta-heading">Find a companion for your family</h3>
+          <h3 id="story-cta-heading">Find a companion for your loved one</h3>
           <p>Join our waitlist — we'll reach out as soon as we're ready in your area. No cost, no commitment, no pressure.</p>
-          <button class="btn btn--primary btn--lg" onclick="scrollToForm('family')">Find a companion for my family</button>
+          <button class="btn btn--primary btn--lg" onclick="scrollToForm('family')">Find a companion for my loved one</button>
         </div>
       </div>
     </div>
@@ -266,8 +266,8 @@
           <div class="prereq-item">
             <div class="prereq-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
             <div>
-              <strong>Minimum 2 visits per week</strong>
-              <p>Each visit is 2 hours. We need companions who can commit to a regular weekly schedule with the same elder. Consistency is what builds trust and is central to how Sawubona works.</p>
+              <strong>At least 1 visit per week</strong>
+              <p>Each visit is 2 hours. We ask for a minimum of one visit per week with the same elder — that is the Sawubona plan, our entry tier. Consistency is what builds trust and is central to how Sawubona works.</p>
             </div>
           </div>
           <div class="prereq-item">
@@ -420,7 +420,7 @@
   <section class="section" id="for-families">
     <div class="container">
       <div class="section-label">Service tiers</div>
-      <h2 class="section-title">Plans that fit your family.</h2>
+      <h2 class="section-title">Plans that fit your loved one.</h2>
       <p class="section-intro">These are our founding member rates — locked in for as long as you stay continuously subscribed. We are accepting families now in London and Hertfordshire. Join the waitlist and we will be in touch within 5 working days.</p>
       <div class="plans">
         <div class="plan">
@@ -460,7 +460,7 @@
       </div>
       <p class="plans__smallprint">Founding member rates are locked in for as long as you stay continuously subscribed — they will never be increased for existing families. Any future price changes apply to new families only, with at least 60 days written notice.</p>
       <div class="plans__cta">
-        <button class="btn btn--primary btn--lg" onclick="scrollToForm('family')">Join the family waitlist</button>
+        <button class="btn btn--primary btn--lg" onclick="scrollToForm('family')">Join the waitlist</button>
         <p class="plans__note">Founding member rates locked in permanently while you stay subscribed. No commitment required to register.</p>
       </div>
     </div>
@@ -584,8 +584,8 @@
         <!-- FAMILY FORM -->
         <div class="form-card" id="form-family">
           <div class="form-card__header form-card__header--teal">
-            <h3 id="family-form-heading">Find a companion for my family</h3>
-            <p id="family-form-sub">Tell us a little about your elder so we can find the right match</p>
+            <h3 id="family-form-heading">Find a companion for my loved one</h3>
+            <p id="family-form-sub">Tell us a little about your loved one so we can find the right match</p>
           </div>
           <form class="waitlist-form" id="family-form" novalidate>
             <input type="hidden" name="variant" id="family-variant-field" value="A" />
@@ -721,10 +721,10 @@
               <input type="text" id="comp-language" name="languages" placeholder="e.g. Yoruba, English, Pidgin" required />
             </div>
             <div class="field">
-              <label for="comp-availability">Can you commit to at least 2 visits per week? <span class="field-required">*</span></label>
+              <label for="comp-availability">Can you commit to at least 1 visit per week? <span class="field-required">*</span></label>
               <select id="comp-availability" name="availability" required>
                 <option value="">Please select</option>
-                <option value="yes-2">Yes — I can do 2 visits per week</option>
+                <option value="yes-2">Yes — I can do at least 1 visit per week</option>
                 <option value="yes-more">Yes — I can do 3 or more per week</option>
                 <option value="maybe">Possibly — depends on the schedule</option>
                 <option value="no">Not right now — fewer than 2 per week</option>
@@ -793,66 +793,5 @@
 
   <script src="main.js"></script>
   <script src="variant.js"></script>
-<script data-pplx-inline-edit>
-(function(){
-  if(window===window.top)return;
-  function inlineAll(orig,clone){
-    if(orig.nodeType!==1)return;
-    try{
-      var cs=getComputedStyle(orig);
-      var t='';
-      for(var i=0;i<cs.length;i++){t+=cs[i]+':'+cs.getPropertyValue(cs[i])+';';}
-      clone.style.cssText=t;
-    }catch(e){}
-    var oc=orig.children,cc=clone.children;
-    for(var j=0;j<oc.length&&j<cc.length;j++){inlineAll(oc[j],cc[j]);}
-  }
-  function stripExternal(clone){
-    var imgs=clone.querySelectorAll('img');
-    for(var i=0;i<imgs.length;i++){
-      var s=imgs[i].getAttribute('src');
-      if(s&&!s.startsWith('data:'))imgs[i].removeAttribute('src');
-    }
-    var all=clone.querySelectorAll('*');
-    for(var i=0;i<all.length;i++){
-      var st=all[i].style.cssText;
-      if(st&&st.indexOf('url(')>=0){
-        all[i].style.cssText=st.replace(/url\(["']?(?!data:)[^)"']*["']?\)/gi,'none');
-      }
-    }
-  }
-  window.addEventListener('message',function(e){
-    if(!e.data||e.data.type!=='INLINE_EDIT_CAPTURE_REQUEST')return;
-    var scrollX=window.scrollX||window.pageXOffset||0;
-    var scrollY=window.scrollY||window.pageYOffset||0;
-    var w=window.innerWidth,h=window.innerHeight;
-    try{
-      var clone=document.documentElement.cloneNode(true);
-      var rm=clone.querySelectorAll('script,link[rel="stylesheet"],style');
-      for(var i=0;i<rm.length;i++){rm[i].remove();}
-      inlineAll(document.documentElement,clone);
-      stripExternal(clone);
-      var html=new XMLSerializer().serializeToString(clone);
-      var svg='<svg xmlns="http://www.w3.org/2000/svg" width="'+w+'" height="'+h+'">'
-        +'<foreignObject width="100%" height="100%">'
-        +'<div xmlns="http://www.w3.org/1999/xhtml" style="width:'+w+'px;height:'+h+'px;overflow:hidden">'
-        +'<div style="transform:translate(-'+scrollX+'px,-'+scrollY+'px);transform-origin:top left">'
-        +html+'</div></div></foreignObject></svg>';
-      var svgUrl='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
-      var img=new Image();
-      img.onload=function(){
-        var c=document.createElement('canvas');c.width=w;c.height=h;
-        c.getContext('2d').drawImage(img,0,0);
-        window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:c.toDataURL('image/png'),scrollX:scrollX,scrollY:scrollY},'*');
-      };
-      img.onerror=function(){
-        window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:null,scrollX:scrollX,scrollY:scrollY},'*');
-      };
-      img.src=svgUrl;
-    }catch(err){
-      window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:null,scrollX:scrollX,scrollY:scrollY},'*');
-    }
-  });
-})();
-</script></body>
+</body>
 </html>
