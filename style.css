@@ -1617,3 +1617,228 @@ cite {
   margin-top: 2px;
   letter-spacing: 0.01em;
 }
+
+/* ============================================================
+   OUR STORY SECTION
+   ============================================================ */
+
+.our-story {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: var(--space-12);
+  align-items: start;
+  margin-top: var(--space-8);
+}
+
+.our-story__body p {
+  font-size: var(--text-base);
+  line-height: 1.75;
+  color: var(--color-text);
+  margin-bottom: var(--space-5);
+}
+
+.our-story__body em {
+  font-style: italic;
+  color: var(--color-primary);
+}
+
+.story-belief {
+  background: #1C3422;
+  border-radius: 12px;
+  padding: var(--space-8) var(--space-8);
+  margin: 0;
+  position: sticky;
+  top: 100px;
+}
+
+.story-belief p {
+  font-family: 'Boska', Georgia, serif;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 500;
+  color: #F5F2EC;
+  line-height: 1.35;
+  font-style: italic;
+  margin: 0 0 var(--space-4) 0;
+}
+
+.story-belief cite {
+  font-size: 0.8rem;
+  color: #C8870A;
+  font-style: normal;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .our-story {
+    grid-template-columns: 1fr;
+  }
+  .story-belief {
+    position: static;
+  }
+}
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+.testimonial {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.testimonial__quote {
+  position: relative;
+}
+
+.testimonial__quote svg {
+  color: #1C3422;
+  margin-bottom: var(--space-2);
+}
+
+.testimonial__quote p {
+  font-size: var(--text-sm);
+  line-height: 1.75;
+  color: var(--color-text);
+  font-style: italic;
+  margin: 0;
+}
+
+.testimonial__author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-4);
+  margin-top: auto;
+}
+
+.testimonial__author-info strong {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.testimonial__author-info span {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 640px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+
+.faq-list {
+  margin-top: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.faq-item {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+  overflow: hidden;
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-5) var(--space-6);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text);
+  cursor: pointer;
+  list-style: none;
+  gap: var(--space-4);
+  line-height: 1.4;
+}
+
+.faq-question::-webkit-details-marker { display: none; }
+.faq-question::marker { display: none; }
+
+.faq-question::after {
+  content: '+';
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #C8870A;
+  flex-shrink: 0;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+details[open] .faq-question::after {
+  transform: rotate(45deg);
+}
+
+details[open] .faq-item,
+.faq-item:has(> summary[open]) {
+  border-color: #1C3422;
+}
+
+details[open] .faq-question {
+  color: #1C3422;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.faq-answer {
+  padding: var(--space-5) var(--space-6);
+}
+
+.faq-answer p {
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ============================================================
+   FOOTER POLICY LINKS
+   ============================================================ */
+
+.footer__policy-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.footer__policy-links a {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer__policy-links a:hover {
+  color: #C8870A;
+}
+
+.footer__policy-links span {
+  font-size: 0.78rem;
+  color: var(--color-border);
+}
